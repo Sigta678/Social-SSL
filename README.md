@@ -2,8 +2,6 @@
 This is the official implementation of our paper:
 
 Social-SSL: Self-Supervised Cross-Sequence Representation Learning Based on Transformers for Multi-Agent Trajectory Prediction\
-Li-Wu Tsao, Yan-Kai Wang, Hao-Siang Lin, Hong-Han Shuai, Lai-Kuan Wong, Wen-Huang Cheng\
-ECCV 2022 - Oral paper
 
 # Environment
 - Tested OS: Linux Ubuntu 18.04
