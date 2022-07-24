@@ -10,17 +10,17 @@ according to the key values: **obsvs**, **preds**, **batches**, **times**, **idx
 
 <ul>
 <li>
-**'batches'** is used to indicate the start index and end index of the data contained in each frame.
+<strong>'batches'</strong> is used to indicate the start index and end index of the data contained in each frame.
 </li>
 <li>
-**'obsvs'** and **'preds'** save the coordinates of all agents in the non-decreasing order of timestamps. Each 'obsvs' data contains the <br>
+<strong>'obsvs'</strong> and <strong>'preds'</strong> save the coordinates of all agents in the non-decreasing order of timestamps. Each 'obsvs' data contains the <br>
 coordinates of 8 time points observed from the past to the present, and 'preds' contains the coordinates of the next 12 time points.
 </li>
 <li>
-**'times'** has the same number of items as 'obsvs' and 'preds', and stores the timestamp of the corresponding frame.
+<strong>'times'</strong> has the same number of items as 'obsvs' and 'preds', and stores the timestamp of the corresponding frame.
 </li>
 <li>
-**'idx_and_dist'** has the same number of items as 'batches', and for each agent per frame, stores the distance between this agent and other agents. If there is only one road agent in the current frame, the distance to other agents is undefined, the data is set to None.
+<strong>'idx_and_dist'</strong> has the same number of items as 'batches', and for each agent per frame, stores the distance between this agent and other agents. If there is only one road agent in the current frame, the distance to other agents is undefined, the data is set to None.
 </li>
 </ul>
 
