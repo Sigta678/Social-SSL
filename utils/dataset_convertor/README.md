@@ -10,17 +10,17 @@ according to the key values: **obsvs**, **preds**, **batches**, **times**, **idx
 
 <ul>
 <li>
-'batches' is used to indicate the start index and end index of the data contained in each frame.
+**'batches'** is used to indicate the start index and end index of the data contained in each frame.
 </li>
 <li>
-'obsvs' and 'preds' save the coordinates of all agents in the non-decreasing order of timestamps. Each 'obsvs' data contains the <br>
+**'obsvs'** and **'preds'** save the coordinates of all agents in the non-decreasing order of timestamps. Each 'obsvs' data contains the <br>
 coordinates of 8 time points observed from the past to the present, and 'preds' contains the coordinates of the next 12 time points.
 </li>
 <li>
-'times' has the same number of items as 'obsvs' and 'preds', and stores the timestamp of the corresponding frame.
+**'times'** has the same number of items as 'obsvs' and 'preds', and stores the timestamp of the corresponding frame.
 </li>
 <li>
-'idx_and_dist' has the same number of items as 'batches', and for each agent per frame, stores the distance between this agent and other agents. If there is only one road agent in the current frame, the distance to other agents is undefined, the data is set to None.
+**'idx_and_dist'** has the same number of items as 'batches', and for each agent per frame, stores the distance between this agent and other agents. If there is only one road agent in the current frame, the distance to other agents is undefined, the data is set to None.
 </li>
 </ul>
 
@@ -46,12 +46,12 @@ For both the two datasets, the preprocessing process is roughly as follows:
 Some details to note for each of the two datasets are as follows
 
 
-ETH and UCY:
+**ETH and UCY:**
 
 ETH dataset contains two scenes, ETH and HOTEL. UCY is another dataset which contains the ZARA1, ZARA2, and UNIV scenes. In many trajectory prediction studies, a total of 5 scenes in ETH and UCY are used to evaluate the leave-one-out performance of the model in the context of dense crowds. We use the txt file organized by Social-GAN as the raw dataset, which can be downloaded by this [site](https://www.dropbox.com/s/8n02xqv3l9q18r1/datasets.zip?dl=0&file_subpath=%2Fdatasets). It can be noted that it have been used in many papers, Social-STGCNN, STGAT, etc. We convert it to .npz format through the above process, using the same sampling frequency = 1 and interval = 1 as previous works.
 
 
-Stanford Drone Dataset (SDD):
+**Stanford Drone Dataset (SDD):**
 
 The SDD dataset is a large-scale dataset contains pedestrians, bicyclists, and vehicles using train-test split to evaluate the model performance. It can be downloaded directly on its [official website](https://cvgl.stanford.edu/projects/uav_data/). The original data format is similar to ETH/UCY and is stored in .txt files. Also, we convert it to .npz format through the previous process, using the same sampling frequency = 1 and interval = 12 as previous works.
 
