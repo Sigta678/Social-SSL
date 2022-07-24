@@ -19,6 +19,7 @@ Li-Wu Tsao, Yan-Kai Wang, Hao-Siang Lin, Hong-Han Shuai, Lai-Kuan Wong, Wen-Huan
 
 # Preprocessing & Datasets
 The preprocessed version of ETH/UCY dataset can be download [here](https://drive.google.com/drive/folders/1lz34zED9gC2-m17FmajLotJjtw0EKkB9?usp=sharing)
+More details on preprocessing and the tools for converting from raw datasets can be found in the [utils/dataset_convertor/](https://github.com/ShiningKeyboarder/Social-SSL/tree/main/utils/dataset_convertor) folder.
 
 # Training pretext
 ![](images/Pretext.png)
