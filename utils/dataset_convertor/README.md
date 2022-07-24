@@ -60,8 +60,8 @@ The SDD dataset is a large-scale dataset contains pedestrians, bicyclists, and v
 
 ## ◆ Usage
 
-Scripts *create_dataset_homo_leave1out_scale_perm.py* and *parse_utils_homo_leave1out_scale_perm.py* are used to convert the ETH/UCY dataset.
-Scripts *create_dataset_sdd_scale_perm.py* and *parse_utils_sdd_scale_perm.py* are used to convert the SDD dataset.
+Scripts *create_dataset_homo_leave1out_scale_perm.py* and *parse_utils_homo_leave1out_scale_perm.py* are used to transform the ETH/UCY dataset.
+Scripts *create_dataset_sdd_scale_perm.py* and *parse_utils_sdd_scale_perm.py* are used to transform the SDD dataset.
 
 
 ### Folder Structure
@@ -76,4 +76,4 @@ It should be noted that in the ETH/UCY experiment, this process needs to be repe
 ### Run Script
 
 - Put the two files <em>create_dataset_homo_leave1out_scale_perm.py</em> and <em>parse_utils_homo_leave1out_scale_perm.py</em> in the same directory, and modify the <strong>dataset_dir</strong> variable in <em>create_dataset_homo_leave1out_scale_perm.py</em> to the path of the folder <strong>X</strong>.
-- Enter <code>$python create_dataset_homo_leave1out_scale_perm.py</code> in the command line to execute the script and complete the conversion of the raw dataset to our .npz format dataset.
+- Type <code>$python create_dataset_homo_leave1out_scale_perm.py</code> in the command line to execute the script and complete the conversion of the raw dataset to our .npz format dataset.
