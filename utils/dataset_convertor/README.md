@@ -5,8 +5,8 @@ This section will describe the two datasets, ETH/UCY and SDD, that were run in t
 
 ## ◆ Dataset Format
 
-The data format accepted by our model is .npz, which is divided into five data items according to the key value: <br>
-obsvs, preds, batches, times, idx_and_dist.
+The data format accepted by our model is .npz, which is divided into five data items <br>
+according to the key values: obsvs, preds, batches, times, idx_and_dist.
 
 <ul>
 <li>
@@ -30,14 +30,8 @@ obsvs, preds, batches, times, idx_and_dist.
 The following will describe how to convert the dataset into the .npz format accepted by our model. For both the two datasets, the preprocessing process is roughly as follows:
 1. Collect all timestamps and corresponding coordinate positions that appear of each agent id.
 2. Convert the raw data into a data format for trajectory prediction, that is, store the past and future trajectories of each road agent in each frame.
-<ol>
-<li>
-Iterates over all timestamps covered by the dataset according to the set sampling frequency. For example, if the sampling frequency is set to 3, the starting position of the following trajectory sequence will skip its starting position to the third timestamp after the current trajectory sequence.
-</li>
-<li>
-According to the data collected in step 1, for each agent, confirm whether there are past and future trajectories of a complete time period based on the current timestamp. If so, add the data to the dataset. For the judgment of the complete time period, we will look at the past 7 time points and look at the future 12 time points from the current timestamp (a total of 20 time points). The 'interval' hyperparameter control the gap of each two recorded timestamps will skip how many actual frames. For example, if the interval is set to 2, the next frame is 2 frames behind the current frame.
-</li>
-</ol>
+  1. Iterates over all timestamps covered by the dataset according to the set sampling frequency. For example, if the sampling frequency is set to 3, the starting position of the following trajectory sequence will skip its starting position to the third timestamp after the current trajectory sequence.
+  2. According to the data collected in step 1, for each agent, confirm whether there are past and future trajectories of a complete time period based on the current timestamp. If so, add the data to the dataset. For the judgment of the complete time period, we will look at the past 7 time points and look at the future 12 time points from the current timestamp (a total of 20 time points). The 'interval' hyperparameter control the gap of each two recorded timestamps will skip how many actual frames. For example, if the interval is set to 2, the next frame is 2 frames behind the current frame.
 3. Check for the trajectory sequence data with the same starting timestamp, save the start index and end index of the frame in the data set.
 4. For each agent in each frame, compute the Euclidean distance between that agent and other agents in the same frame.
 5. Transform the coordinate data to the [0, 1] interval by normalization (Min-Max Scaling).
