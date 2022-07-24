@@ -6,7 +6,7 @@ This section will describe the two datasets, ETH/UCY and SDD, that were run in t
 ## ◆ Dataset Format
 
 The data format accepted by our model is .npz, which is divided into five data items <br>
-according to the key values: obsvs, preds, batches, times, idx_and_dist.
+according to the key values: **obsvs**, **preds**, **batches**, **times**, **idx_and_dist**.
 
 <ul>
 <li>
@@ -20,8 +20,7 @@ coordinates of 8 time points observed from the past to the present, and 'preds' 
 'times' has the same number of items as 'obsvs' and 'preds', and stores the timestamp of the corresponding frame.
 </li>
 <li>
-'idx_and_dist' has the same number of items as 'batches', and for each agent per frame, stores the distance between this agent and other agents. <br>
-If there is only one road agent in the current frame, the distance to other agents is undefined, the data is set to None.
+'idx_and_dist' has the same number of items as 'batches', and for each agent per frame, stores the distance between this agent and other agents. If there is only one road agent in the current frame, the distance to other agents is undefined, the data is set to None.
 </li>
 </ul>
 
