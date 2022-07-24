@@ -60,7 +60,7 @@ The SDD dataset is a large-scale dataset contains pedestrians, bicyclists, and v
 
 ## ◆ Usage
 
-Scripts *create_dataset_homo_leave1out_scale_perm.py* and *parse_utils_homo_leave1out_scale_perm.py* are used to transform the ETH/UCY dataset.
+Scripts *create_dataset_homo_leave1out_scale_perm.py* and *parse_utils_homo_leave1out_scale_perm.py* are used to transform ETH/UCY dataset.<br>
 Scripts *create_dataset_sdd_scale_perm.py* and *parse_utils_sdd_scale_perm.py* are used to transform the SDD dataset.
 
 
