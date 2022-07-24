@@ -55,3 +55,25 @@ ETH dataset contains two scenes, ETH and HOTEL. UCY is another dataset which con
 
 The SDD dataset is a large-scale dataset contains pedestrians, bicyclists, and vehicles using train-test split to evaluate the model performance. It can be downloaded directly on its [official website](https://cvgl.stanford.edu/projects/uav_data/). The original data format is similar to ETH/UCY and is stored in .txt files. Also, we convert it to .npz format through the previous process, using the same sampling frequency = 1 and interval = 12 as previous works.
 
+
+
+
+## ◆ Usage
+
+Scripts *create_dataset_homo_leave1out_scale_perm.py* and *parse_utils_homo_leave1out_scale_perm.py* are used to convert the ETH/UCY dataset.
+Scripts *create_dataset_sdd_scale_perm.py* and *parse_utils_sdd_scale_perm.py* are used to convert the SDD dataset.
+
+
+### Folder Structure
+
+- Create a folder to store the raw dataset, hereafter called <strong>X</strong>.
+- Then create three sub-folders <strong>train</strong>, <strong>val</strong> and <strong>test</strong> under the folder <strong>X</strong>.
+- Put the raw data of the training set, validation set, and the testing set under the three folders of <strong>train</strong>, <strong>val</strong> and <strong>test</strong> respectively. A subfolder can put multiple .txt files.
+For example, if you conduct a leave-one-out experiment and test it on the ETH scene. Put all the .txt files of the ETH scene in the <strong>test</strong> folder, and put the .txt files of the HOTEL, ZARA1, ZARA2 and UNIV scenes in the <strong>train</strong> and <strong>val</strong> folders.
+It should be noted that in the ETH/UCY experiment, this process needs to be repeated for the five scenes ETH, HOTEL, ZARA1, ZARA2 and UNIV. That is to create 5 folders, X are <strong>ETH</strong>, <strong>HOTEL</strong>, <strong>ZARA1</strong>, <strong>ZARA2</strong> and <strong>UNIV</strong>.
+
+
+### Run Script
+
+- Put the two files <em>create_dataset_homo_leave1out_scale_perm.py</em> and <em>parse_utils_homo_leave1out_scale_perm.py</em> in the same directory, and modify the <strong>dataset_dir</strong> variable in <em>create_dataset_homo_leave1out_scale_perm.py</em> to the path of the folder <strong>X</strong>.
+- Enter <code>$python create_dataset_homo_leave1out_scale_perm.py</code> in the command line to execute the script and complete the conversion of the raw dataset to our .npz format dataset.
