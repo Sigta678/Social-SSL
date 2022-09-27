@@ -3,7 +3,7 @@ import numpy as np
 from tqdm import tqdm
 from parse_utils_homo_leave1out_scale_perm import HomoParser, create_dataset, scale_npz, merge_npz, calculate_neighbor_distance
 
-dataset_dir = '/home/mrfish/CVPR2021/scale_perm_dataset/datasets/raw'
+dataset_dir = '/home/Social-SSL/data/pedestrian/X'
 
 for subset in os.listdir(dataset_dir):
     if subset == 'train' or subset == 'val' or subset == 'test' or subset == 'all_data':

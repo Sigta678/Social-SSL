@@ -226,7 +226,7 @@ def create_dataset(p_data, t_data, t_range, n_past=8, n_next=12):
 def calculate_neighbor_distance(dataset_dir):
     for dataset in os.listdir(dataset_dir):
         if '.npz' in dataset and 'dist' not in dataset:
-            data = np.load(os.path.join(dataset_dir, dataset))
+            data = np.load(os.path.join(dataset_dir, dataset), allow_pickle=True)
             obsv, pred, batches, time = data['obsvs'], data['preds'], data['batches'], data['times']
 
             idx_and_dist = []
@@ -264,11 +264,11 @@ def calculate_neighbor_distance(dataset_dir):
 def scale_npz(dataset_dir):
     for dataset in os.listdir(dataset_dir):
         if '_dist.npz' in dataset and 'scale' not in dataset:
-            data = np.load(os.path.join(dataset_dir, dataset))
+            data = np.load(os.path.join(dataset_dir, dataset), allow_pickle=True)
             obsv, pred, batches, time, idx_and_dist = data['obsvs'], data['preds'], data['batches'], data['times'], data['idx_and_dist']
 
             scaler = MinMaxScaler(feature_range=(0, 1))
-            scaler.fit(np.append(obsv[:,:,:2].reshape(-1,), pred[:,:,:2].reshape(-1,)).reshape(-1,2))
+            scaler.fit(obsv[:,:,:2].reshape(-1,).reshape(-1,2)) 
             obsv[:,:,:2] = scaler.transform(obsv[:,:,:2].reshape(-1,2)).reshape(-1,8,2)
             pred[:,:,:2] = scaler.transform(pred[:,:,:2].reshape(-1,2)).reshape(-1,12,2)
 
@@ -310,7 +310,7 @@ def merge_npz(dataset_dir, npz_out_file):
             if npz_out_file.split('/')[-1] == dataset:    
                 continue
 
-            data = np.load(os.path.join(dataset_dir, dataset))
+            data = np.load(os.path.join(dataset_dir, dataset), allow_pickle=True)
             obsv, pred, batches, time, id_dist, s_m = \
                     data['obsvs'], data['preds'], data['batches'], data['times'], data['idx_and_dist'], data['scale_and_min']
 
